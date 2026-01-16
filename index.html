@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkansh Energies</title>
+    <style>
+        :root {
+            --solar-amber: #eab308;
+            --tech-slate: #0f172a;
+            --header-dark: #075985;
+            --bg-gradient: linear-gradient(to bottom, #bae6fd 0%, #ffffff 100%);
+            --glass: rgba(255, 255, 255, 0.85);
+        }
+
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            font-family: 'Calibri', 'Segoe UI', sans-serif;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            color: var(--tech-slate);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 380px;
+            text-align: center;
+        }
+
+        .logo-wrapper {
+            margin: 20px auto -8px; 
+            width: 180px;
+            height: 180px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .logo-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-size: 1.9rem;
+            letter-spacing: 3px;
+            margin: 0; 
+            padding: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            line-height: 1.1;
+            color: var(--header-dark);
+        }
+
+        h1 b { font-weight: 900; color: var(--solar-amber); }
+
+        .tagline {
+            font-size: 0.7rem;
+            letter-spacing: 1.2px;
+            color: #0369a1;
+            text-transform: uppercase;
+            margin-top: 6px;
+            font-weight: bold;
+        }
+
+        .card-stack {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 22px;
+            text-align: left;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            animation: slideIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-color: var(--solar-amber);
+        }
+
+        .card-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #0f172a;
+        }
+
+        .card-role {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: var(--solar-amber);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        /* Full width button for saving contact */
+        .save-btn {
+            grid-column: span 2;
+            background: var(--tech-slate) !important;
+            color: white !important;
+            margin-top: 5px;
+        }
+
+        .action-link {
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border: 1px solid #e2e8f0;
+            color: var(--tech-slate);
+            background: white;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .action-link:hover {
+            border-color: var(--solar-amber);
+            background: #fffef2;
+        }
+
+        footer {
+            margin-top: 25px;
+            margin-bottom: 30px;
+            font-size: 0.65rem; 
+            letter-spacing: 1px; 
+            font-weight: bold;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo-wrapper">
+        <img src="Logo.png" alt="Arkansh Energies Logo" class="logo-image">
+    </div>
+
+    <h1>ARKANSH <b>ENERGIES</b></h1>
+    <div class="tagline">Every Ray. Every Watt. Infinite Future.</div>
+
+    <div class="card-stack">
+        <div class="card">
+            <span class="card-name">Jahanvi Dhruve</span>
+            <span class="card-role">Co - Founder</span>
+            <div class="contact-grid">
+                <a href="tel:+917096958130" class="action-link">📞 Call</a>
+                <a href="mailto:info@aine.co.in" class="action-link">✉ Email</a>
+                <div class="action-link save-btn" onclick="generateVCard('Jahanvi Dhruve', '+917096958130', 'info@aine.co.in')">👤 Save Contact</div>
+            </div>
+        </div>
+      
+        <div class="card">
+            <span class="card-name">Prashil Mehta</span>
+            <span class="card-role">Co - Founder</span>
+            <div class="contact-grid">
+                <a href="tel:+919408576801" class="action-link">📞 Call</a>
+                <a href="mailto:prashil2807@gmail.com" class="action-link">✉ Email</a>
+                <div class="action-link save-btn" onclick="generateVCard('Prashil Mehta', '+919408576801', 'prashil2807@gmail.com')">👤 Save Contact</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="card-name">Kashyap Solanki</span>
+            <span class="card-role">Co - Founder</span>
+            <div class="contact-grid">
+                <a href="tel:+919016220365" class="action-link">📞 Call</a>
+                <a href="mailto:kashyapsolanki290@gmail.com" class="action-link">✉ Email</a>
+                <div class="action-link save-btn" onclick="generateVCard('Kashyap Solanki', '+919016220365', 'kashyapsolanki290@gmail.com')">👤 Save Contact</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        PIONEERING SUSTAINABLE SOLAR SOLUTIONS <BR> ARKANSH ENERGIES © 2026
+    </footer>
+</div>
+
+<script>
+// SAVE CONTACT LOGIC (VCF Generation)
+function generateVCard(name, phone, email) {
+    const cleanPhone = phone.replace(/\s+/g, '');
+    
+    // Using version 3.0 for best compatibility with iPhone/Android
+    const vcard = [
+        "BEGIN:VCARD",
+        "VERSION:3.0",
+        `FN:${name}`,
+        `N:;${name};;;`, // Added structured name for better sorting
+        "ORG:Arkansh Energies",
+        `TEL;TYPE=CELL:${cleanPhone}`,
+        `EMAIL;TYPE=INTERNET:${email}`,
+        "END:VCARD"
+    ].join("\r\n"); // Using \r\n (standard for VCF)
+
+    const blob = new Blob([vcard], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `${name.replace(/\s+/g, '_')}.vcf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// Simple Toast Notification
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.textContent = message;
+    toast.style.position = 'fixed';
+    toast.style.bottom = '20px';
+    toast.style.left = '50%';
+    toast.style.transform = 'translateX(-50%)';
+    toast.style.background = 'rgba(15, 23, 42, 0.9)';
+    toast.style.color = 'white';
+    toast.style.padding = '10px 20px';
+    toast.style.borderRadius = '20px';
+    toast.style.fontSize = '0.8rem';
+    toast.style.zIndex = '1000';
+    document.body.appendChild(toast);
+    setTimeout(() => toast.remove(), 3000);
+}
+</script>
+
+</body>
+</html>
